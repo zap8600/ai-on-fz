@@ -1,0 +1,34 @@
+# For details & more options, see documentation/AppManifests.md in firmware repo
+
+App(
+    appid="flipper_ml",  # Must be unique
+    name="Flipper Machine Learning",  # Displayed in menus
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="flipper_ml_app",
+    stack_size=2 * 1024,
+    fap_private_libs=[
+        Lib(
+            name="tflm",
+            fap_include_paths=[
+                ".",
+                "../../third_party/flatbuffers/include",
+                "../../third_party/gemmlowp",
+                "../../third_party/kissfft",
+                "../../third_party/ruy",
+            ],
+            cflags=[
+                "-Wno-unused-parameter",
+                "-Wno-double-promotion",
+                "-Wno-sign-compare",
+                "-Wno-redundant-decls",
+                "-Wno-deprecated-declarations",
+            ],
+            cincludes=[
+                "third_party/flatbuffers/include",
+                "third_party/gemmlowp",
+                "third_party/kissfft",
+                "third_party/ruy",
+            ],
+        ),
+    ],
+)
