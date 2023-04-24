@@ -6,6 +6,10 @@ App(
     apptype=FlipperAppType.EXTERNAL,
     entry_point="flipper_ml_app",
     stack_size=2 * 1024,
+    sources=[
+        "flipper_ml.cc",
+        "model/model.cc",
+    ],
     fap_private_libs=[
         Lib(
             name="tflm",
