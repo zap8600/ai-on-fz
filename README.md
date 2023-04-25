@@ -5,3 +5,6 @@ This currently doesn't work! In order to get anywhere, the `cc.scons` file in fb
 
 ## Installation
 Run `pip3 install -r requirements.txt` to install `ufbt`, which lets you build the app without needing to clone the firmware repo.
+
+## Progression
+In order for the library to work, the linker error should need to be traced. If anyone has any suggestions on how to fix this, it would be greatly appreciated.
